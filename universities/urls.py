@@ -1,8 +1,10 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 
-from .views import UniversitiesListAPIView
+from .views import UniversitiesViewSet
 
+router = DefaultRouter()
+router.register(r'universities', UniversitiesViewSet)
 
-urlpatterns = [
-    path(r'', UniversitiesListAPIView.as_view(), name='universities-list')
-]
+# Adding routing to the urlpatterns
+urlpatterns = router.urls
