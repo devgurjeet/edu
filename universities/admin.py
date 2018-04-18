@@ -1,3 +1,4 @@
 from django.contrib import admin
+from universities.models import Universities
 
-# Register your models here.
+admin.site.register(Universities)
